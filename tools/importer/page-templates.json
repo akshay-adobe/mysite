@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://www.example.com/"
+      ],
+      "representativeUrl": "https://www.example.com/",
+      "description": "Home page - minimal placeholder page consisting entirely of default content (heading, paragraph, link).",
+      "urlPattern": "/",
+      "blocks": [],
+      "sections": []
+    }
+  ]
+}
