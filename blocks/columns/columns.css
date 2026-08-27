@@ -30,4 +30,18 @@
     flex: 1;
     order: unset;
   }
+
+  /* Explicit tile widths per column count (gap is 24px).
+     3 tiles -> 33.3% each, 2 tiles -> 50/50, 1 tile -> 100%. */
+  .columns.columns-1-cols > div > div {
+    flex: 0 0 100%;
+  }
+
+  .columns.columns-2-cols > div > div {
+    flex: 0 0 calc(50% - 12px);
+  }
+
+  .columns.columns-3-cols > div > div {
+    flex: 0 0 calc(33.333% - 16px);
+  }
 }
