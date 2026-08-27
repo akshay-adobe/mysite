@@ -269,5 +269,39 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* theme toggle button (light/dark) */
+header nav .nav-tools .nav-theme-toggle {
+  width: 40px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: 2px solid currentcolor;
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+header nav .nav-tools .nav-theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: currentcolor;
+  transition: transform 0.2s ease;
+}
+
+header nav .nav-tools .nav-theme-toggle[aria-pressed='true']::before {
+  transform: translateX(16px);
 }
 

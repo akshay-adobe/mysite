@@ -130,6 +130,34 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
 
+  // theme toggle (light/dark) placed in the tools area, next to search
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const themeToggle = document.createElement('button');
+    themeToggle.type = 'button';
+    themeToggle.className = 'nav-theme-toggle';
+
+    const applyTheme = (dark) => {
+      document.documentElement.classList.toggle('dark-theme', dark);
+      themeToggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      const label = dark ? 'Switch to light theme' : 'Switch to dark theme';
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.title = label;
+    };
+
+    let isDark = false;
+    try { isDark = localStorage.getItem('theme') === 'dark'; } catch (e) { /* ignore */ }
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+      isDark = !document.documentElement.classList.contains('dark-theme');
+      applyTheme(isDark);
+      try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) { /* ignore */ }
+    });
+
+    navTools.append(themeToggle);
+  }
+
   const navBrand = nav.querySelector('.nav-brand');
   const brandLink = navBrand.querySelector('.button');
   if (brandLink) {

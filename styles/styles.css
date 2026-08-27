@@ -40,6 +40,16 @@
   --nav-height: 64px;
 }
 
+/* dark theme: overrides the color tokens; whole site follows via var() usage */
+:root.dark-theme {
+  --background-color: #131313;
+  --light-color: #1f1f1f;
+  --dark-color: #d0d0d0;
+  --text-color: #f5f5f5;
+  --link-color: #6b8afd;
+  --link-hover-color: #9db2ff;
+}
+
 /* fallback fonts */
 @font-face {
   font-family: roboto-condensed-fallback;
@@ -78,6 +88,7 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body.appear {
