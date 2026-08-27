@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "mysite": {
+      "previewOrg": "akshay-adobe",
+      "previewSite": "mysite",
+      "contentHostUrl": "https://content.da.live/akshay-adobe/mysite/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}
